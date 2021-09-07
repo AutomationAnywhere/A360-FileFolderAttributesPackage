@@ -1,0 +1,11 @@
+{
+  "name": "FileFolderAttributes",
+  "label": "[[label]]",
+  "description": "[[description]]",
+  "group": "",
+  "artifactName": "",
+  "packageVersion": "",
+  "codeVersion": "",
+  "author": "Automation Anywhere",
+  "commands": []
+}

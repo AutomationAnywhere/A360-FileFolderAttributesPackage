@@ -1,0 +1,190 @@
+{
+    "name": "FileFolderAttributes",
+    "label": "[[label]]",
+    "description": "[[description]]",
+    "group": "com.automationanywhere",
+    "artifactName": "FileFolderAttributes",
+    "packageVersion": "2.1.0-20210907-113607",
+    "codeVersion": "2.1.0-20210907-113607",
+    "author": "",
+    "commands": [
+        {
+            "name": "AllFileInSubDirs",
+            "label": "[[AllFileInSubDirs.label]]",
+            "description": "[[AllFileInSubDirs.description]]",
+            "nodeLabel": "[[AllFileInSubDirs.node_label]]",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.commands.AllFileInSubDirsCommand",
+            "icon": "pkg.svg",
+            "returnType": "LIST",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "[[AllFileInSubDirs.return_label]]",
+            "returnRequired": true,
+            "attributes": [
+                {
+                    "name": "inputFolderPath",
+                    "label": "[[AllFileInSubDirs.inputFolder.label]]",
+                    "type": "FILE",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "FILE_FOLDER"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "FileAttributes",
+            "label": "[[FileAttributes.label]]",
+            "description": "[[FileAttributes.description]]",
+            "nodeLabel": "[[FileAttributes.node_label]]",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.commands.FileAttributesCommand",
+            "icon": "pkg.svg",
+            "returnType": "DICTIONARY",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "[[FileAttributes.return_label]]",
+            "returnRequired": true,
+            "attributes": [
+                {
+                    "name": "inputFile",
+                    "label": "[[FileAttributes.inputFile.label]]",
+                    "type": "FILE",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "FilesinFolder",
+            "label": "[[FilesinFolder.label]]",
+            "description": "[[FilesinFolder.description]]",
+            "nodeLabel": "[[FilesinFolder.node_label]]",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.commands.FilesinFolderCommand",
+            "icon": "pkg.svg",
+            "returnType": "LIST",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "[[FilesinFolder.return_label]]",
+            "returnRequired": true,
+            "attributes": [
+                {
+                    "name": "inputFolderPath",
+                    "label": "[[FilesinFolder.inputFolder.label]]",
+                    "type": "FILE",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "FILE_FOLDER"
+                        }
+                    ]
+                },
+                {
+                    "name": "sortFolderBy",
+                    "label": "[[FilesinFolder.sortType.label]]",
+                    "type": "SELECT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ],
+                    "options": [
+                        {
+                            "label": "By Date - Desc",
+                            "value": "bydatedesc"
+                        },
+                        {
+                            "label": "By Date - Asc",
+                            "value": "bydateasc"
+                        },
+                        {
+                            "label": "By Name - Desc",
+                            "value": "bynamedesc"
+                        },
+                        {
+                            "label": "By Name - Asc",
+                            "value": "bynameasc"
+                        },
+                        {
+                            "label": "By Size - Asc",
+                            "value": "bysizeasc"
+                        },
+                        {
+                            "label": "By Size - Desc",
+                            "value": "bysizedesc"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "FolderAttributes",
+            "label": "[[FolderAttributes.label]]",
+            "description": "[[FolderAttributes.description]]",
+            "nodeLabel": "[[FolderAttributes.node_label]]",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.commands.FolderAttributesCommand",
+            "icon": "pkg.svg",
+            "returnType": "DICTIONARY",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "[[FolderAttributes.return_label]]",
+            "returnRequired": true,
+            "attributes": [
+                {
+                    "name": "inputFolder",
+                    "label": "[[FolderAttributes.inputFolder.label]]",
+                    "type": "FILE",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "FILE_FOLDER"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "FoldersinFolder",
+            "label": "[[FoldersinFolder.label]]",
+            "description": "[[FoldersinFolder.description]]",
+            "nodeLabel": "[[FoldersinFolder.node_label]]",
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.automationanywhere.commands.FoldersinFolderCommand",
+            "icon": "pkg.svg",
+            "returnType": "LIST",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "[[FoldersinFolder.return_label]]",
+            "returnRequired": true,
+            "attributes": [
+                {
+                    "name": "inputFolderPath",
+                    "label": "[[FoldersinFolder.inputFolder.label]]",
+                    "type": "FILE",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "FILE_FOLDER"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
