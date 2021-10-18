@@ -26,5 +26,5 @@
 	"FoldersinFolder.node_label": "Folders of {{inputFolderPath}}",
 	"FoldersinFolder.description": "Returns a list of direct subfolders of the provided parent folder",
 	"FoldersinFolder.return_label": "List of direct Subfolders in Folder",
-	"FoldersinFolder.inputFolder.label": "Folder Path to Evaluate"	
+	"FoldersinFolder.inputFolder.label": "Folder Path to Evaluate"
 }

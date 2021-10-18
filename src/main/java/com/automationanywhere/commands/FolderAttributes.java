@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
 
 import static com.automationanywhere.Supplemental.getFilesCount.getFilesCount;
@@ -59,12 +60,16 @@ public class FolderAttributes {
         Path pathofFile;
         File folder = new File(inputFolder);
         try {
+            //Set path for BasicFileAttributes
+            pathofFile = Paths.get(inputFolder);
+            BasicFileAttributes attributes = Files.readAttributes(pathofFile, BasicFileAttributes.class);
             //Get total size of folder
             folderAttributes.put("size", new NumberValue(FileUtils.sizeOfDirectory(folder)));
             //Get count of files
             folderAttributes.put("totalFileCount", new NumberValue(getFilesCount(folder)));
             folderAttributes.put("totalFoldersCount", new NumberValue(getFoldersCount(folder)));
-            folderAttributes.put("immediateFileCount", new NumberValue(folder.listFiles().length));
+            folderAttributes.put("createdDate", new StringValue(attributes.creationTime().toString()));
+            folderAttributes.put("lastModifiedDate", new StringValue(attributes.lastModifiedTime().toString()));
             folderAttributes.put("owner", new StringValue(Files.getOwner(folder.toPath()).toString()));
             //Check if folder is read only
             if (!folder.canWrite()) {
@@ -85,6 +90,7 @@ public class FolderAttributes {
             File[] files = directory.listFiles();
             List<String> strList = new ArrayList<String>();
             int folderCount = 0;
+            int fileCount = 0;
             //Loop through collection of files and add to list
             for (File file : files) {
                 strList.add(file.toString());
@@ -100,9 +106,12 @@ public class FolderAttributes {
                 //Only capture file results, not folders
                 if (checkFile.isDirectory()) {
                     folderCount++;
+                } else {
+                    fileCount++;
                 }
             }
             folderAttributes.put("immediateFolderCount", new NumberValue(folderCount));
+            folderAttributes.put("immediateFileCount", new NumberValue(fileCount));
         } catch (Exception e) {
             throw new BotCommandException("Error occured while reading file properties. Error code: " + e.toString());
         }

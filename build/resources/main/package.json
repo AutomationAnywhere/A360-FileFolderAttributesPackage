@@ -4,8 +4,8 @@
     "description": "[[description]]",
     "group": "com.automationanywhere",
     "artifactName": "FileFolderAttributes",
-    "packageVersion": "2.1.0-20210907-113607",
-    "codeVersion": "2.1.0-20210907-113607",
+    "packageVersion": "2.1.0-20211018-103413",
+    "codeVersion": "2.1.0-20211018-103413",
     "author": "",
     "commands": [
         {
