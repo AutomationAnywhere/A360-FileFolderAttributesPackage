@@ -111,6 +111,7 @@ public class FileAttributes {
                     //get num pages
                     int numPages = pdf.getNumberOfPages();
                     fileAttributes.put("NumPages", new NumberValue(numPages));
+                    pdf.close();
                 } catch (Exception e) {
                     //Do nothing - this PDF properties is extra
                 }
@@ -129,6 +130,7 @@ public class FileAttributes {
                     //get width
                     int width = image.getWidth(null);
                     fileAttributes.put("WidthInPixels", new NumberValue(width));
+
                 } catch (Exception e) {
                     //do nothing, image properties is extra
                 }
